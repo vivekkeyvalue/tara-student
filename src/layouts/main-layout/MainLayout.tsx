@@ -10,7 +10,7 @@ const MainLayout = () => (
     <div className="size-full">
       <MainHeader />
       <SideNavBar />
-      <div className="pb-83 h-screen overflow-y-auto bg-bgBase">
+      <div className="pb-83 h-screen overflow-y-auto bg-primaryLite">
         <div className="wrapper">
           <Suspense
             fallback={

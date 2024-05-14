@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { SidebarItemProps } from './types';
 
 const SidebarItem = (props: SidebarItemProps) => {
-  const { isCurrentRoute, item, path } = props;
+  const { isCurrentRoute, item, path, isSidebarOpen } = props;
 
   const { id, Icon, label, route } = item;
 
@@ -20,12 +20,14 @@ const SidebarItem = (props: SidebarItemProps) => {
       <div>
         <Icon className={clsx('size-6', itemColor)} />
       </div>
-      <span
-        className={`truncate text-sm font-medium ${itemColor}
+      {isSidebarOpen && (
+        <span
+          className={`truncate text-sm font-medium ${itemColor}
       `}
-      >
-        {label}
-      </span>
+        >
+          {label}
+        </span>
+      )}
     </Link>
   );
 };

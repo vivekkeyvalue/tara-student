@@ -1,19 +1,19 @@
 import { ReactComponent as DashboardIcon } from '@assets/icons/dashboard.svg';
 import { ReactComponent as HomeWorkIcon } from '@assets/icons/homework.svg';
-import { DASHBOARD, HOMEWORK_MANAGEMENT } from './routes';
+import { DASHBOARD, HOMEWORKS } from './routes';
 
 const MENU_ITEMS = [
   {
     id: 1,
     Icon: DashboardIcon,
-    label: 'Dashboard',
+    label: 'Home',
     route: DASHBOARD.DASHBOARD
   },
   {
     id: 2,
     Icon: HomeWorkIcon,
-    label: 'Manage Homework',
-    route: HOMEWORK_MANAGEMENT.CREATE_HOMEWORK
+    label: 'HomeWorks',
+    route: HOMEWORKS.HOMEWORKSLIST
   }
 ];
 

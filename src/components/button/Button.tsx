@@ -13,20 +13,18 @@ import {
 import Spinner from '../spinner/Spinner';
 import theme from '../../../themes/colors';
 
-const wrapperStyles = `flex items-center rounded-lg justify-center text-body-semi disabled:cursor-not-allowed`;
+const wrapperStyles = `flex items-center justify-center text-body-semi disabled:cursor-not-allowed`;
 
 const variantStyles = {
-  primary: `bg-primary disabled:bg-primary disabled:opacity-50 hover:bg-primary60`,
-  transparent: `bg-transparent`,
-  secondary: `bg-primaryLite1 border-primary disabled:bg-white disabled:border-grey30 border hover:border-primary60 hover:bg-white`,
-  primary_stud: `bg-gradient-to-r from-primary10 to-primary rounded-3xl disabled:bg-primary disabled:opacity-50 hover:bg-primary60`
+  primary: `bg-gradient-to-r from-primary10 to-primary rounded-3xl disabled:bg-primary disabled:opacity-50 hover:bg-primary60`,
+  transparent: `bg-transparent rounded-3xl`,
+  secondary: `bg-primaryLite1 border-primary rounded-3xl disabled:bg-white disabled:border-grey30 border hover:border-primary60 hover:bg-white`
 };
 
 const loadingStyles = {
   primary: `!bg-primary`,
   transparent: '',
-  secondary: '!bg-primaryLite1 border-primary border',
-  primary_stud: `!bg-primary`
+  secondary: '!bg-primaryLite1 border-primary border'
 };
 
 const labelStyles = {
@@ -41,10 +39,6 @@ const labelStyles = {
   secondary: {
     default: 'text-sm text-primary font-semibold',
     disabled: ''
-  },
-  primary_stud: {
-    default: 'text-base text-theme font-medium',
-    disabled: '!text-theme'
   }
 };
 
@@ -137,7 +131,9 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={clsx(
-        loading ? `relative ${loadingStyles[variant]}` : variantStyles[variant],
+        loading
+          ? `relative ${loadingStyles[variant]}`
+          : `shantell-sans-font ${variantStyles[variant]}`,
         sizeStyles[size],
         className,
         wrapperStyles

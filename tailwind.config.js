@@ -24,7 +24,9 @@ module.exports = {
         8: '8px'
       },
       width: {
-        352: '352px'
+        72: '72px',
+        352: '352px',
+        230: '230px'
       },
       margin: {
         '5px': '5px',
@@ -34,8 +36,11 @@ module.exports = {
         22: '88px',
         16: '64px',
         16.5: '66px',
-        68.5: '274px'
+        68.5: '274px',
+        12.5: '50px',
+        85: '85px'
       },
+
       boxShadow: {
         mediumBlur: '0px 4px 24px rgba(0, 0, 0, 0.1)',
         dropdownShadow: '0px 4px 24px rgba(10, 31, 68, 0.1)',

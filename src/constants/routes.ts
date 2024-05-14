@@ -6,8 +6,8 @@ export const HOME = {
   HOME: '/'
 };
 
-export const HOMEWORK_MANAGEMENT = {
-  CREATE_HOMEWORK: '/create-homework'
+export const HOMEWORKS = {
+  HOMEWORKSLIST: '/homeworks'
 };
 
 export const DASHBOARD = {

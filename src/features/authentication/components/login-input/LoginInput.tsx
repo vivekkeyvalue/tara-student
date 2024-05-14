@@ -19,7 +19,7 @@ const LoginInput = ({
   >
     <Input
       name="Mobile Number"
-      className="border-xl mb-6 mt-12 w-full"
+      className="border-xl my-6 w-full"
       value={email}
       onChange={handleChange}
       type="text"
@@ -28,8 +28,6 @@ const LoginInput = ({
       inputSize="medium"
       error={!!errorMessage}
       errorMessage={errorMessage}
-      labelRequired
-      label="Email Address"
     />
     <Button
       label="Continue"
