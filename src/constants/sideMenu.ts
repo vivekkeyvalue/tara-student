@@ -12,7 +12,7 @@ const MENU_ITEMS = [
   {
     id: 2,
     Icon: HomeWorkIcon,
-    label: 'HomeWorks',
+    label: 'Homeworks',
     route: HOMEWORKS.HOMEWORKSLIST
   }
 ];

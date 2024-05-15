@@ -16,7 +16,7 @@ const AuthSection = ({
         </div>
       )}
       {!!description && (
-        <div className="flex w-4/5 items-center gap-2 text-center text-sm font-normal text-grey">
+        <div className="flex w-4/5 items-center gap-2 text-center text-base font-normal text-grey">
           <div>{description}</div>
         </div>
       )}

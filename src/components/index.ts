@@ -7,6 +7,10 @@ import OtpInput from './otpInput/OtpInput';
 import Avatar from './avatar/Avatar';
 import ProfileSettings from './profile-settings/ProfileSettings';
 import SidebarItem from './sidebar-item/SidebarItem';
+import PageTitle from './page-title/PageTitle';
+import Tabs from './tabs/Tabs';
+import SearchBar from './searchbar/SearchBar';
+import Pagination from './pagination/Pagination';
 
 export {
   Spinner,
@@ -17,5 +21,9 @@ export {
   OtpInput,
   Avatar,
   ProfileSettings,
-  SidebarItem
+  SidebarItem,
+  PageTitle,
+  Tabs,
+  SearchBar,
+  Pagination
 };

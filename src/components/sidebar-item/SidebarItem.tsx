@@ -22,7 +22,7 @@ const SidebarItem = (props: SidebarItemProps) => {
       </div>
       {isSidebarOpen && (
         <span
-          className={`truncate text-sm font-medium ${itemColor}
+          className={`truncate text-base font-semibold ${itemColor}
       `}
         >
           {label}

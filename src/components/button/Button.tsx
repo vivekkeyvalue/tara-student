@@ -18,13 +18,15 @@ const wrapperStyles = `flex items-center justify-center text-body-semi disabled:
 const variantStyles = {
   primary: `bg-gradient-to-r from-primary10 to-primary rounded-3xl disabled:bg-primary disabled:opacity-50 hover:bg-primary60`,
   transparent: `bg-transparent rounded-3xl`,
-  secondary: `bg-primaryLite1 border-primary rounded-3xl disabled:bg-white disabled:border-grey30 border hover:border-primary60 hover:bg-white`
+  secondary: `bg-primaryLite1 border-primary rounded-3xl disabled:bg-white disabled:border-grey30 border hover:border-primary60 hover:bg-white`,
+  tertiary: `bg-theme border rounded-lg`
 };
 
 const loadingStyles = {
   primary: `!bg-primary`,
   transparent: '',
-  secondary: '!bg-primaryLite1 border-primary border'
+  secondary: '!bg-primaryLite1 border-primary border',
+  tertiary: ''
 };
 
 const labelStyles = {
@@ -39,14 +41,15 @@ const labelStyles = {
   secondary: {
     default: 'text-sm text-primary font-semibold',
     disabled: ''
-  }
+  },
+  tertiary: { default: 'text-sm text-content font-semibold', disabled: '' }
 };
 
 const loadingLabelStyles = {
   primary: 'text-white text-body-semi invisible',
   transparent: 'invisible',
   secondary: 'invisible',
-  primary_stud: 'text-white text-body-semi invisible'
+  tertiary: ''
 };
 
 const sizeStyles = {
@@ -150,7 +153,7 @@ const Button: React.FC<ButtonProps> = ({
           name={leftIconName}
           stroke={getIconStrokeColor(leftIconStroke || '')}
           size="medium"
-          className={`mr-2 ${leftIconStyle || ''}`}
+          className={`${leftIconStyle || ''}`}
         />
       )}
       {label && (
