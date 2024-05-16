@@ -37,7 +37,7 @@ const HomeworkCard = ({ details, handleSelect }: HomeworkCardProps) => {
   return (
     <div
       role="presentation"
-      className="cursor-pointer rounded-lg bg-white px-4 pb-6 pt-4 shadow-lg md:w-[calc(33%-31px)] lg:w-[calc(25%-36px)]"
+      className="cursor-pointer rounded-lg bg-white px-4 pb-6 pt-4 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 md:w-[calc(33%-31px)] lg:w-[calc(25%-36px)]"
       style={backgroundStyle}
       onClick={handleSelect}
     >

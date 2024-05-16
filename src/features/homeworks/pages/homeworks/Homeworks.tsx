@@ -92,11 +92,7 @@ const HomeWorks = () => {
         />
       </div>
       {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
-          onCancel={handleModalClose}
-          isCloseIconRequired
-        >
+        <Modal isOpen={isModalOpen} isCloseIconRequired={false}>
           <div className="size-full rounded-lg bg-theme">
             <HomeworkDetails
               details={selectedHomework}
