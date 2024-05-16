@@ -33,6 +33,7 @@ const SideNavBar = () => {
 
           return (
             <SidebarItem
+              key={item.label}
               item={item}
               path={path}
               isCurrentRoute={isCurrentRoute}

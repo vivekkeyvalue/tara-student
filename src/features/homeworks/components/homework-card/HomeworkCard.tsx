@@ -7,9 +7,9 @@ import backgroundImage4 from '@assets/images/card_bg_4.svg';
 import HomeworkLabel from '../homework-label/HomeworkLabel';
 
 interface HomeworkCardProps {
-  status: string;
-  title: string;
-  subject: string;
+  // TODO: needs to be updated with BE
+  details: any;
+  handleSelect: () => void;
 }
 
 const backgroundImages = [
@@ -24,7 +24,7 @@ const getRandomBackgroundImage = () => {
   return backgroundImages[randomIndex];
 };
 
-const HomeworkCard = ({ status, title, subject }: HomeworkCardProps) => {
+const HomeworkCard = ({ details, handleSelect }: HomeworkCardProps) => {
   const backgroundImage = getRandomBackgroundImage();
 
   const backgroundStyle = {
@@ -36,14 +36,16 @@ const HomeworkCard = ({ status, title, subject }: HomeworkCardProps) => {
 
   return (
     <div
+      role="presentation"
       className="cursor-pointer rounded-lg bg-white px-4 pb-6 pt-4 shadow-lg md:w-[calc(33%-31px)] lg:w-[calc(25%-36px)]"
       style={backgroundStyle}
+      onClick={handleSelect}
     >
-      <HomeworkLabel label={status as LabelVarient} />
+      <HomeworkLabel label={details.status as LabelVarient} />
       <div className="truncate-multiline mb-1 mt-4 text-base font-semibold">
-        {title}
+        {details.title}
       </div>
-      <div className="text-sm font-semibold text-grey10">{subject}</div>
+      <div className="text-sm font-semibold text-grey10">{details.subject}</div>
     </div>
   );
 };

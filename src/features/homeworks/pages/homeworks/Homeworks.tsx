@@ -1,10 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 
 import { TabPill } from '@types';
+import Head from '@layouts/head/Head';
+import Modal from '@layouts/modal/Modal';
 import { PAGINATION_LIMIT } from '@constants/generic';
 import { homeworkTabs } from '@features/homeworks/constants';
 import { Button, PageTitle, Pagination, SearchBar, Tabs } from '@components';
 import HomeworkCard from '@features/homeworks/components/homework-card/HomeworkCard';
+import HomeworkDetails from '@features/homeworks/components/homework-details/HomeworkDetails';
+// TODO: to be removed
+import { homeworkDetails } from '@constants/dummydata';
 
 const HomeWorks = () => {
   const homeworkCards = [];
@@ -12,8 +18,9 @@ const HomeWorks = () => {
   const [selectedTab, setSelectedTab] = useState<TabPill>(homeworkTabs[0]);
   const [searchValue, setSearchValue] = useState<string>('');
   const [page, setPage] = useState<number>(1);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [totalCount, setTotalCount] = useState<number>(50);
+  const [selectedHomework, setSelectedHomework] = useState<any>();
 
   const onSelectTab = (tab: TabPill) => {
     setSelectedTab(tab);
@@ -23,21 +30,33 @@ const HomeWorks = () => {
     setSearchValue(searchTerm);
   };
 
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const onHomeworkStartClick = () => {
+    // TODO: to be updated
+    console.log('Homework start click');
+  };
+
+  // TODO: to be removed
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < 12; i++) {
     homeworkCards.push(
       <HomeworkCard
-        key={i} // Adding a unique key for each HomeworkCard
-        status="yet_to_start"
-        title="Multiple operations involving all four operations dsfsdf sdfdsfsdf dfsdfdf dfaafds dfsfd dfsdf sdfdsf dfsdf dafdf  df sf sdf sdf sdf "
-        subject="Maths"
+        key={i}
+        details={homeworkDetails}
+        handleSelect={() => {
+          setIsModalOpen(true);
+          setSelectedHomework(homeworkDetails);
+        }}
       />
     );
   }
 
-  // Render the array of HomeworkCard components inside JSX
   return (
     <>
+      <Head title="Homeworks" />
       <PageTitle title="Homeworks" />
       <div className="mt-6 flex items-center justify-between">
         <div>
@@ -72,6 +91,21 @@ const HomeWorks = () => {
           limit={PAGINATION_LIMIT}
         />
       </div>
+      {isModalOpen && (
+        <Modal
+          isOpen={isModalOpen}
+          onCancel={handleModalClose}
+          isCloseIconRequired
+        >
+          <div className="size-full rounded-lg bg-theme">
+            <HomeworkDetails
+              details={selectedHomework}
+              onClose={handleModalClose}
+              onStart={onHomeworkStartClick}
+            />
+          </div>
+        </Modal>
+      )}
     </>
   );
 };

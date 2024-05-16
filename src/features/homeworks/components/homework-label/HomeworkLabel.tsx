@@ -6,6 +6,11 @@ const labelStyle = {
   fininshed: 'bg-blue'
 };
 
+const sizeStyle = {
+  small: 'rounded-3xl p-2',
+  large: 'rounded-xl px-4 py-2'
+};
+
 // TODO: subjective to changes
 const value = {
   yet_to_start: 'Yet to Start',
@@ -13,9 +18,13 @@ const value = {
   fininshed: 'Finished'
 };
 
-const HomeworkLabel = ({ label }: HomeworkLabelProps) => (
+const HomeworkLabel = ({
+  size = 'small',
+  label,
+  className
+}: HomeworkLabelProps) => (
   <div
-    className={`${labelStyle[label]} w-fit rounded-3xl p-2 text-sm font-bold`}
+    className={`${labelStyle[label]} w-fit  text-sm font-bold ${sizeStyle[size]} ${className}`}
   >
     {value[label]}
   </div>
