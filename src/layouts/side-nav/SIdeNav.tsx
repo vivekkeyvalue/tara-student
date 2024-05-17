@@ -22,7 +22,7 @@ const SideNavBar = () => {
       onMouseEnter={openSidebar}
       onMouseLeave={closeSidebar}
       className={`top-65 absolute left-0 z-50 h-[calc(100vh-85px)] bg-theme shadow-sm transition-all duration-300 ease-in-out ${
-        isSidebarOpen ? 'w-230' : 'w-72'
+        isSidebarOpen ? 'w-270' : 'w-72'
       }`}
     >
       <div className="mt-6 flex flex-col gap-3 py-3">

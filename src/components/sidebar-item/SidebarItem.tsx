@@ -15,14 +15,14 @@ const SidebarItem = (props: SidebarItemProps) => {
     <Link
       key={id}
       to={path || route}
-      className={`flex items-center gap-3 px-4 py-3 ${itemBorder}`}
+      className={`flex items-center gap-3 py-3 pl-6 pr-4 ${itemBorder}`}
     >
       <div>
         <Icon className={clsx('size-6', itemColor)} />
       </div>
       {isSidebarOpen && (
         <span
-          className={`truncate text-base font-semibold ${itemColor}
+          className={`truncate pl-2 text-center text-base font-semibold ${itemColor}
       `}
         >
           {label}
